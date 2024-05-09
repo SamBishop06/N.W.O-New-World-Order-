@@ -1,0 +1,54 @@
+@use "values" as x;
+
+// Create borders with the ability to define sides
+@mixin borders($values: (), $default: true) {
+	@if $default == false {
+		border: none;
+
+		@each $side in $values {
+			border-#{$side}: x.$border;
+		}
+	}
+	@else {
+		border: x.$border;
+
+		@each $side in $values {
+			border-#{$side}: none;
+		}
+	}
+}
+
+// Build a flexbox
+@mixin flex($direction: row, $wrap: nowrap, $justify: null, $align: null) {
+	display:   flex;
+	flex-flow: $direction $wrap;
+
+	@if $justify != null {
+		justify-content: $justify;
+	};
+	@if $align != null {
+		align-items: $align;
+	}
+}
+
+// Media queries for different devices. Resolutions are defined in _values.scss
+@mixin res($devices...) {
+	@each $device in $devices {
+		$min-width: map-get(map-get(x.$resolutions, $device), min-width);
+		$max-width: map-get(map-get(x.$resolutions, $device), max-width);
+
+		@if $min-width != null and $max-width != null {
+			@media (min-width: $min-width) and (max-width: $max-width) {
+				@content;
+			}
+		} @else if $min-width != null {
+			@media (min-width: $min-width) {
+				@content;
+			}
+		} @else if $max-width != null {
+			@media (max-width: $max-width) {
+				@content;
+			}
+		}
+	}
+}

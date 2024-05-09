@@ -1,0 +1,56 @@
+{
+	"page": {
+		"footer": {
+			"authors": "Designed and coded by #Ctrl-Alt-Defeat (Danny Sanchez, Joshua Hale, Ray Beliveau)",
+			"links":   {
+				"privacy": "Privacy Policy",
+				"tos":     "Terms of Service"
+			}
+		}
+	},
+	"languages":  {
+		"aria": {
+			"de": "German",
+			"en": "English",
+			"es": "Spanish",
+			"fr": "French"
+		}
+	},
+	"login":      {
+		"page":      {
+			"title":       "Login",
+			"description": "Secure user login page for Whisper. Enter your username and password to access your account and manage your profile settings."
+		},
+		"formTitle": "Login",
+		"linkText":  "Register",
+		"button":    "Login",
+		"checkbox":  "Stay logged in",
+		"username":  "Username",
+		"password":  "Password"
+	},
+	"register":   {
+		"page":        {
+			"title":       "Register",
+			"description": "Create a new account on our site. Enter your personal information and secure your profile."
+		},
+		"formTitle":   "Register",
+		"linkText":    "Login",
+		"button":      "Register",
+		"name":        "Full Name",
+		"email":       "Email",
+		"username":    "Username",
+		"password":    "Password",
+		"passConfirm": "Confirm",
+		"coppa":       "I agree that I am at least 13 years old",
+		"terms":       "I agree to the Terms and Conditions"
+	},
+	"settings":   {
+		"page": {
+			"title":       "Settings",
+			"description": ""
+		},
+		"form": {
+			"theme": "Theme"
+		}
+	}
+}

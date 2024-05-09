@@ -1,0 +1,83 @@
+// Fonts and Icons
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/***
+ * Maps
+ */
+
+// Colors
+$colors:        (
+	                border:         rgba(0, 0, 0, 0.1),
+	                footer-font:    white,
+	                header-bg:      rgba(0, 0, 0, 0.9),
+	                header-font:    #B0B0B0,
+	                header-link:    white,
+	                link-active:    darkslateblue,
+	                shadow:         rgba(0, 0, 0, 0.3)
+                );
+
+// Fonts
+$fonts: ( // @formatter:off
+					icons:  "Material Symbols Outlined",
+			        main:   (Poppins, sans-serif),
+					title:  ("Playfair Display", serif)
+        ); // @formatter:on
+
+// Font Sizes
+$font-sizes:    ( // @formatter:off
+	                xlarge:       3rem,
+	                large:        2rem,
+	                medium-large: 1.5rem,
+	                medium:       1rem,
+	                medium-small: 0.9rem,
+	                small:        0.7rem,
+	                tiny:         0.6rem
+                ); // @formatter:on
+
+// Screen resolution
+$resolutions:   ( // @formatter:off
+		              desktop: (min-width: 1025px, max-width: null), // No max-width for desktop
+		              tablet: (min-width: 768px, max-width: 1024px),
+		              mobile: (min-width: null, max-width: 767px),
+                ); // @formatter:on
+// Shadows (box-shadow, text-shadow, and filter: drop-shadow())
+$shadows:   ( // @formatter:off
+	                none:         0 0 0 map-get($colors, "shadow"),
+	                small:        0 1.5px 3px map-get($colors, "shadow"),
+	                medium:       0 2.5px 5px map-get($colors, "shadow"),
+	                medium-large: 0 5px 7px map-get($colors, "shadow"),
+	                large:        0 5px 10px map-get($colors, "shadow")
+                ); // @formatter:on
+
+// Sizing
+$sizes: ( // @formatter:off
+		        xlarge:       100px,
+		        larger:       75px,
+		        large:        50px,
+		        medium-large: 25px,
+		        medium:       15px,
+		        medium-small: 10px,
+		        small:        5px,
+		        xsmall:       4px
+        ); // @formatter:on
+
+// Transitions
+$transitions:   ( // @formatter:off
+					button:         font-size .25s ease,
+	                transform:      transform .25s ease,
+	                bg-color:       background-color .25s ease,
+	                bg-color-long:  background-color 1s ease,
+	                box-shadow:     box-shadow .25s ease,
+	                text-shadow:    text-shadow .25s ease
+                ); // @formatter:on
+
+/***
+ * Values
+ */
+
+$border:        1px solid map-get($colors, "border");
+$border-radius: map-get($sizes, "medium");
+
+$header-height: 50px;

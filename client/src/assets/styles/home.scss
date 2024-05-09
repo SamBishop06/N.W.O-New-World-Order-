@@ -1,0 +1,20 @@
+@use "mixins";
+// Predefined values and settings
+@use "values" as x; // Predefined values and settings
+
+.home {
+	.login-form {
+		position: fixed;
+		right:    map-get(x.$sizes, "large");
+	}
+}
+
+.test {
+	height: 300px;
+
+}
+
+.test1,
+.test3 {
+	background-color: black;
+}

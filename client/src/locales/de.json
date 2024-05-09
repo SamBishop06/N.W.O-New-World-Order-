@@ -1,0 +1,53 @@
+{
+	"page":      {
+		"footer": {
+			"authors": "Entworfen und programmiert von #Ctrl-Alt-Defeat (Danny Sanchez, Joshua Hale, Ray Beliveau)",
+			"links":   {
+				"privacy": "Datenschutzerklärung",
+				"tos":     "Nutzungsbedingungen"
+			}
+		}
+	},
+	"languages": {
+		"aria": {
+			"de": "Deutsch",
+			"en": "Englisch",
+			"es": "Spanisch",
+			"fr": "Französisch"
+		}
+	},
+	"login":     {
+		"page":      {
+			"title":       "Anmeldung",
+			"description": ""
+		},
+		"formTitle": "Anmelden",
+		"linkText":  "Registrieren",
+		"button":    "Anmelden",
+		"checkbox":  "Angemeldet bleiben",
+		"username":  "Benutzername",
+		"password":  "Passwort"
+	},
+	"register":  {
+		"page":        {
+			"title":       "Registrieren",
+			"description": ""
+		},
+		"formTitle":   "Registrieren",
+		"linkText":    "Anmelden",
+		"button":      "Registrieren",
+		"name":        "Vollständiger Name",
+		"email":       "E-Mail",
+		"username":    "Benutzername",
+		"password":    "Passwort",
+		"passConfirm": "Bestätigen",
+		"coppa":       "Ich bestätige, dass ich mindestens 13 Jahre alt bin",
+		"terms":       "Ich stimme den Allgemeinen Geschäftsbedingungen zu"
+	},
+	"settings":  {
+		"page": {
+			"title":       "",
+			"description": ""
+		}
+	}
+}

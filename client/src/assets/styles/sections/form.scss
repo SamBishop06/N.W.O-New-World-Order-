@@ -1,0 +1,29 @@
+@use "../mixins";
+@use "../values" as x; // Predefined values and settings
+
+.form {
+	padding:       map-get(x.$sizes, "large");
+
+	border-radius: map-get(x.$sizes, "small");
+	box-shadow:    map-get(x.$shadows, "large");
+
+	font-family:   map-get(x.$fonts, "main");
+
+	&__button,
+	&__input,
+	&__label {
+		padding: map-get(x.$sizes, "small");
+	}
+	&__header {
+		@include mixins.flex($justify: space-between, $align: center);
+	}
+	&__row {
+		@include mixins.flex();
+	}
+	&__title {
+		font-size: map-get(x.$font-sizes, "medium-large");
+	}
+
+	&__message {}
+
+}

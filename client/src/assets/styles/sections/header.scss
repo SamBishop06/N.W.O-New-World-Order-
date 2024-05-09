@@ -1,0 +1,11 @@
+@use "../values" as x;         // Predefined values and settings
+
+.page-header {
+	padding: map-get(x.$sizes, "large");
+
+	&__title {
+		color: map-get(x.$colors, header-font);
+		font-family: map-get(x.$fonts, "title");
+		text-shadow: map-get(x.$shadows, "small");
+	}
+}

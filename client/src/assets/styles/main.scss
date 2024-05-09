@@ -1,0 +1,43 @@
+@use "reset";
+@use "mixins";
+@use "values" as x;
+@use "sections/header";
+@use "sections/content";
+@use "sections/form";
+@use "sections/footer";
+
+body {
+	font-size: 88%;
+}
+
+#root {
+	@include mixins.flex(column);
+	min-height: 100vh;
+
+}
+.content {
+	@include mixins.flex(column);
+	//align-items: center;
+	min-height: 100%;
+	flex-grow: 1;
+}
+
+.content {
+	//max-width:  1024px;
+	margin-top: x.$header-height;
+}
+
+.link {
+	color: blue;
+	text-decoration: none;
+}
+
+.languages {
+	@include mixins.flex();
+	gap: map-get(x.$sizes, "small");
+
+	&__flag {
+		display: inline-block;
+		cursor: pointer;
+	}
+}
