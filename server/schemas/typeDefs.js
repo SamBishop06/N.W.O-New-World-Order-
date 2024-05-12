@@ -9,9 +9,10 @@ const typeDefs = gql`
     posts: [Post]
   }
 
-  type AuthToken {
-    token: String
-  }
+type Auth {
+  token: ID!
+  user: User 
+}
 
   type Post {
     _id: ID
@@ -43,11 +44,11 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createUser(input: UserInput): User
+    createUser(input: UserInput): Auth
     updateUser(id: ID!, input: UserInput): User
     deleteUser(id: ID!): UserDeleteResponse
     getUserProfile: User
-    login(email: String!, password: String!): AuthToken
+    login(email: String!, password: String!): Auth
     logout: Boolean
     createPost(input: PostInput): Post
     updatePost(id: ID!, input: PostInput): Post
