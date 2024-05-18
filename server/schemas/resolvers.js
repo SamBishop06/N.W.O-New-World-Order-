@@ -16,38 +16,38 @@ const resolvers = {
   },
   Mutation: {
     createUser: async (_, { input }) => {
-      // try {
-      //   // Check if the email is already registered
-      //   const existingUser = await User.findOne({ email: input.email });
-      //   if (existingUser) {
-      //     throw new Error('Email is already registered');
-      //   }
+      try {
+        // Check if the email is already registered
+        const existingUser = await User.findOne({ email: input.email });
+        if (existingUser) {
+          throw new Error('Email is already registered');
+        }
 
-      //   // Hash the password
-      //   const hashedPassword = await bcrypt.hash(input.password, 10);
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(input.password, 10);
 
-      //   // Create the user
-      //   const user = new User({
-      //     username: input.username,
-      //     email: input.email,
-      //     password: hashedPassword
-      //   });
+        // Create the user
+        const user = new User({
+          username: input.username,
+          email: input.email,
+          password: hashedPassword
+        });
 
-      //   // Save the user to the database
-      //   const newUser = await user.save();
+        // Save the user to the database
+        const newUser = await user.save();
 
-      //   // Generate JWT token for the newly created user
-      //   const token = jwt.sign({ userId: newUser._id }, SECRET_KEY, { expiresIn: '1d' });
+        // Generate JWT token for the newly created user
+        const token = jwt.sign({ userId: newUser._id }, SECRET_KEY, { expiresIn: '1d' });
 
-      //   return {
-      //     _id: newUser._id,
-      //     username: newUser.username,
-      //     email: newUser.email,
-      //     token
-      //   };
-      // } catch (error) {
-      //   throw new Error(`Failed to create user: ${error.message}`);
-      // }
+        return {
+          _id: newUser._id,
+          username: newUser.username,
+          email: newUser.email,
+          token
+        };
+      } catch (error) {
+        throw new Error(`Failed to create user: ${error.message}`);
+      }
       const user = await User.create({ ...input });
       const token = signToken(user);
       console.log(user);

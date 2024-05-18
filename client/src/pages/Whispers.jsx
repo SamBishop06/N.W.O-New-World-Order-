@@ -21,7 +21,7 @@ export default () => {
 	return (
 		<main className="whispers">
 			<Helmet>
-				<title>Whispers</title>
+				<title>N.W.O</title>
 				<meta name="description" content="This is a place to have a discussion."/>
 			</Helmet>
 			<MessageList messages={messages}/>

@@ -5,18 +5,37 @@ import { AppContext } from '../pages/Home';
 // Load language translations
 import { useTranslation } from 'react-i18next';
 import '../config/i18n';
+import { useMutation } from '@apollo/client';
 
 // Load CSS
 import '../assets/styles/sections/loginregister.scss';
 
-export default () => {
+const Register = () => {
 	const { setIsLogin }    = useContext(AppContext);
 	const [error, setError] = useState('');
 	const { t }             = useTranslation(); // For translations
+	
+	const [formState, setFormState] = useState({
+		name: '',
+		email: '',
+		password: ''
+	});
 
-	const handleFormSubmit = (e) => {
+	const [addProfile] = useMutation(CREATE_USER);
+	
+	const handleFormSubmit = async (e) => {
 		e.preventDefault();
+		console.log(formState);
 		// TODO: Add Code Here
+		try {
+				const { data } = await createUser({
+				variables: { ...formState },
+				});
+				
+				Auth.login(data.addProfile.token);
+			} catch (e) {
+				console.error(e);
+			}
 	};
 
 	return (
@@ -24,7 +43,7 @@ export default () => {
 			<Helmet>
 				<title>{t('register.page.title')}</title>
 				<meta name="description"
-				      content={t('register.page.description')}/>
+				    content={t('register.page.description')}/>
 			</Helmet>
 
 			<form className="form register-form" onSubmit={handleFormSubmit}>
@@ -42,19 +61,35 @@ export default () => {
 
 				<div className="form__row register-form__row--username">
 					<label className="form__label form__label--username" htmlFor="username">{t('register.username')}</label>
-					<input className="form__input form__input--username" type="text" name="username"
-					       placeholder={t('register.username')}/>
+					<input 
+					className="form__input form__input--username" 
+					type="text" 
+					name="username"
+					value={formState.username}
+        			onChange={handleChange}
+					placeholder={t('register.username')}/>
 				</div>
 
 				<div className="form__row register-form__row--email">
 					<label className="form__label form__label--email" htmlFor="email">{t('register.email')}</label>
-					<input className="form__input form__input--email" type="email" name="email" placeholder={t('register.email')}/>
+					<input 
+					className="form__input form__input--email" 
+					type="email" 
+					name="email" 
+					value={formState.email}
+        			onChange={handleChange}
+					placeholder={t('register.email')}/>
 				</div>
 
 				<div className="form__row register-form__row--password">
 					<label className="form__label form__label--password" htmlFor="password">{t('register.password')}</label>
-					<input className="form__input form__input--password" type="password" name="password"
-					       placeholder={t('register.password')}/>
+					<input 
+					className="form__input form__input--password" 
+					type="password" 
+					name="password"
+					value={formState.password}
+            		onChange={handleChange}
+					placeholder={t('register.password')}/>
 				</div>
 
 				<div className="form__row register-form__row--confirm">
@@ -85,3 +120,4 @@ export default () => {
 		</>
 	);
 }
+export default Register;
