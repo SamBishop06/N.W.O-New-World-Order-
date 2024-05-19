@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import '../config/i18n';
 import { useMutation } from '@apollo/client';
 
+
 // Load CSS
 import '../assets/styles/sections/loginregister.scss';
 
@@ -21,14 +22,14 @@ const Register = () => {
 		password: ''
 	});
 
-	const [addProfile] = useMutation(CREATE_USER);
+	const [addProfile] = useMutation(ADD_PROFILE);
 	
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
 		console.log(formState);
 		
 		try {
-				const { data } = await createUser({
+				const { data } = await addProfile({
 				variables: { ...formState },
 				});
 				

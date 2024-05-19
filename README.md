@@ -20,8 +20,9 @@ Clone the repository, install the dependencies by navigating to the root directo
 Create an account, and chat online with other Anime Nerds! 
 
 ## Screenshots
-
+![Alt text](client/src/assets/styles/pics/NWOwebpic.png)
 ## Deployed Application
+https://n-w-o-new-world-order.onrender.com
 
 ## License
 This project is licensed under the MIT license.
