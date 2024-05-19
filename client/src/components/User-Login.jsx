@@ -62,6 +62,7 @@ export default function LoginPage() {
 						id="username"
                         value={username}
                         onChange={handleChange}
+                        autoComplete="username"
                         placeholder={t('login.username')}
                     />
                 </div>
@@ -77,6 +78,7 @@ export default function LoginPage() {
                         value={password}
                         onChange={handleChange}
                         placeholder={t('login.password')}
+                        autoComplete="current-password"
                     />
                 </div>
                 <div className="form__row login-form__row--checkbox">

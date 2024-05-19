@@ -17,10 +17,10 @@
 	}
 
 	&__list {
-		display:    flex;
-		flex-flow:  row nowrap;
-		gap:        map-get(x.$sizes, "medium");
-		list-style: none;
+		// display:    flex;
+		// flex-flow:  row nowrap;
+		// gap:        map-get(x.$sizes, "medium");
+		// list-style: none;
 	}
 
 	&__item {}

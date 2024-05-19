@@ -22,7 +22,7 @@ export default function PageFooter() {
 				</ul>
 			</nav>
 			<p className="page-footer__text">
-				{t('page.footer.authors')}
+				{t('Sam Bishop creation ')}
 			</p>
 		</footer>
 	);
