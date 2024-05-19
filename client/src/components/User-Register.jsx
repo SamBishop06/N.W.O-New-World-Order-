@@ -26,7 +26,7 @@ const Register = () => {
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
 		console.log(formState);
-		// TODO: Add Code Here
+		
 		try {
 				const { data } = await createUser({
 				variables: { ...formState },
